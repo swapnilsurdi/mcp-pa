@@ -1,0 +1,24 @@
+## Personal Assistant MCP
+
+This conversation has access to a Personal Assistant MCP with productivity tools for managing projects, todos, calendar events, and documents.
+
+### Quick Commands
+- "What's my status?" / "Show my dashboard"
+- "Create project [name]" / "List active projects" / "Update [project] progress to X%"
+- "Create todo: [task]" / "Show pending todos" / "Complete [todo]"
+- "Schedule [event] at [time]" / "Show this week's calendar"
+- "Upload document" / "Create reference to [URL]" / "List documents"
+- "Update my status - I'm in [location] using [device]"
+
+### Key Features
+- Project management with tasks and progress tracking
+- Todo system with priorities and due dates
+- Calendar scheduling with reminders
+- Document storage with encryption support
+- Personal status tracking (location, device, permissions)
+- Dashboard overview of all activities
+
+### Available Tools
+get_status, update_status, create_project, list_projects, get_project, update_project, add_project_task, create_todo, list_todos, complete_todo, create_calendar_event, list_calendar_events, upload_document, create_external_document, list_documents, get_document, get_dashboard
+
+Use natural language - the assistant will parse requests and use appropriate tools. Data is stored securely with optional encryption. Supports both SQLite and TinyDB databases.
