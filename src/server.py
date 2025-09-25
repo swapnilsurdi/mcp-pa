@@ -1,6 +1,7 @@
 import json
 import asyncio
 import os
+import sys
 import base64
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
@@ -74,23 +75,26 @@ async def list_resources() -> List[Resource]:
 @server.read_resource()
 async def read_resource(uri: str) -> str:
     """Read resource content"""
-    if uri == "pa://status":
+    # Convert AnyUrl to string if needed
+    uri_str = str(uri)
+
+    if uri_str == "pa://status":
         status = db.get_status()
         return json.dumps(status.model_dump(), default=str)
-    elif uri == "pa://projects":
+    elif uri_str == "pa://projects":
         projects = db.list_projects()
         return json.dumps([p.model_dump() for p in projects], default=str)
-    elif uri == "pa://todos":
+    elif uri_str == "pa://todos":
         todos = db.list_todos()
         return json.dumps([t.model_dump() for t in todos], default=str)
-    elif uri == "pa://calendar":
+    elif uri_str == "pa://calendar":
         events = db.list_events()
         return json.dumps([e.model_dump() for e in events], default=str)
-    elif uri == "pa://documents":
+    elif uri_str == "pa://documents":
         documents = db.list_documents()
         return json.dumps([d.model_dump() for d in documents], default=str)
     else:
-        raise ValueError(f"Unknown resource: {uri}")
+        raise ValueError(f"Unknown resource: {uri_str}")
 
 @server.list_tools()
 async def list_tools() -> List[Tool]:

@@ -3,6 +3,7 @@
 ## 🚀 Installation (5 minutes)
 
 1. **Run the setup script:**
+
    ```bash
    cd /Users/surdi/Documents/mcp-pa
    python setup.py
@@ -10,6 +11,7 @@
 
 2. **Configure Claude Desktop:**
    Add this to your Claude Desktop config file:
+
    ```json
    {
      "mcpServers": {
@@ -25,7 +27,7 @@
      }
    }
    ```
-   
+
    Location: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 3. **Restart Claude Desktop**
@@ -38,7 +40,7 @@ Try these commands in Claude to get started:
    "What's my current status?"
 
 2. **Update your information:**
-   "Update my status - I'm Swapnil, currently in San Jose, CA, using a MacBook Pro M1"
+   "Update my status - I'm Swapnil, currently in San Jose, CA, using a Mac Mini"
 
 3. **Create your first project:**
    "Create a new project called 'Personal Website' with high priority"
@@ -61,11 +63,13 @@ Try these commands in Claude to get started:
 ## 📚 Common Commands
 
 ### Status Management
+
 - "What's my current status?"
 - "Update my location to San Francisco, CA"
 - "Update my laptop details - MacBook Pro M1 with macOS Sonoma"
 
 ### Project Management
+
 - "Create a project called [name]"
 - "List all my projects"
 - "Show me active projects"
@@ -73,23 +77,27 @@ Try these commands in Claude to get started:
 - "Add a task to [project name]: [task description]"
 
 ### Todo Management
+
 - "Create a todo: [description] due [date]"
 - "Show me all pending todos"
 - "Mark [todo name] as completed"
 - "List todos due this week"
 
 ### Calendar Management
+
 - "Schedule a meeting: [title] on [date] at [time]"
 - "Show me this week's events"
 - "Create an event: [title] from [start time] to [end time]"
 
 ### Document Management
+
 - "Store this document" (provide file)
 - "Create a reference to this Google Doc: [URL]"
 - "Show me all my documents"
 - "List documents tagged with 'finance'"
 
 ### Dashboard
+
 - "Show me my dashboard"
 - "What's my current workload?"
 - "Give me an overview of my projects and tasks"
