@@ -40,19 +40,40 @@ A comprehensive MCP (Model Context Protocol) server for personal productivity ma
 - Python 3.10 or higher
 - Claude Desktop application
 
-### Step 1: Clone the Repository
+### Installation Options
+
+#### Option 1: Install from PyPI (Recommended)
+
+**Using uvx (recommended):**
+```bash
+uvx install mcp-personal-assistant
+```
+
+**Using pipx:**
+```bash
+pipx install mcp-personal-assistant
+```
+
+**Using pip:**
+```bash
+pip install mcp-personal-assistant
+```
+
+#### Option 2: Install from Source (Development)
+
+**Step 1: Clone the Repository**
 ```bash
 git clone <repository-url>
 cd mcp-pa
 ```
 
-### Step 2: Create Virtual Environment
+**Step 2: Create Virtual Environment**
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### Step 3: Install Dependencies
+**Step 3: Install Dependencies**
 ```bash
 pip install -r requirements.txt
 pip install -e .  # Install in development mode
@@ -85,15 +106,28 @@ export MCP_PA_DOCS_DIR=/path/to/documents
 
 ## Claude Desktop Configuration
 
-### Step 4: Configure Claude Desktop
-
 1. **Locate your Claude Desktop configuration file:**
    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - **Linux**: `~/.config/Claude/claude_desktop_config.json`
    - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
-2. **Add the MCP server configuration** (replace `/path/to/your/mcp-pa` with your actual project path):
+2. **Add the MCP server configuration:**
 
+### For PyPI Installation (uvx/pipx/pip):
+```json
+{
+  "mcpServers": {
+    "personal-assistant": {
+      "command": "mcp-personal-assistant",
+      "env": {
+        "MCP_PA_DB_TYPE": "sqlite"
+      }
+    }
+  }
+}
+```
+
+### For Source Installation:
 ```json
 {
   "mcpServers": {
@@ -109,11 +143,10 @@ export MCP_PA_DOCS_DIR=/path/to/documents
 }
 ```
 
-**Important Notes:**
+**Notes for Source Installation:**
 - Use the **full path** to your virtual environment's Python executable
 - Use the **full path** to your project directory in the `cwd` field
 - On Windows, use forward slashes or escaped backslashes in paths
-- Remove the encryption key for basic setup (can be added later)
 
 3. **Restart Claude Desktop** for the configuration to take effect
 
@@ -159,25 +192,31 @@ If you encounter issues, check the Claude Desktop logs at:
 
 ## Quick Start Examples
 
-The `examples/` directory contains ready-to-use templates and scripts:
-
-### 🚀 **Quick Setup Script**
+### 🚀 **PyPI Installation Quick Start**
 ```bash
-# Copy and edit the Claude Desktop config template
+# Install the package
+uvx install mcp-personal-assistant
+
+# Copy the Claude Desktop config template (update paths as needed)
 cp examples/claude_desktop_config.json ~/Library/Application\ Support/Claude/claude_desktop_config.json
 
-# Edit the paths in the config file to match your setup
-# Then restart Claude Desktop
+# Restart Claude Desktop
 ```
 
-### 🧪 **Test the Setup**
+### 🧪 **Test the Installation**
 ```bash
+# Test the console script
+mcp-personal-assistant --help
+
 # Run the basic usage example to verify everything works
-source venv/bin/activate
 python examples/basic_usage.py
 ```
 
-This will create sample projects and todos to test the functionality before using it with Claude Desktop.
+### 📁 **Template Files**
+The `examples/` directory contains ready-to-use templates and scripts:
+- `claude_desktop_config.json` - Template configuration for Claude Desktop
+- `basic_usage.py` - Standalone script to test functionality
+- Usage screenshots showing the MCP in action
 
 ## Available Tools
 
