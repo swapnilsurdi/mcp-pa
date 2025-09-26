@@ -639,7 +639,7 @@ async def call_tool(name: str, arguments: Dict) -> List[TextContent]:
     else:
         raise ValueError(f"Unknown tool: {name}")
 
-async def main():
+async def async_main():
     from mcp.server.stdio import stdio_server
     
     async with stdio_server() as (read_stream, write_stream):
@@ -649,9 +649,13 @@ async def main():
             server.create_initialization_options()
         )
 
+def main():
+    """Entry point for console script"""
+    asyncio.run(async_main())
+
 # Cleanup on shutdown
 import atexit
 atexit.register(lambda: db.close())
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

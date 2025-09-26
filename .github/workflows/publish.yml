@@ -13,6 +13,10 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: write  # Required for creating releases
+  id-token: write  # Required for PyPI trusted publishing
+
 env:
   PYTHON_VERSION: '3.11'
 
@@ -164,7 +168,8 @@ jobs:
           {
             "mcpServers": {
               "personal-assistant": {
-                "command": "mcp-personal-assistant",
+                "command": "uvx",
+                "args": ["mcp-personal-assistant"],
                 "env": {
                   "MCP_PA_DB_TYPE": "sqlite"
                 }

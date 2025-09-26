@@ -1,6 +1,6 @@
 [project]
 name = "mcp-personal-assistant"
-version = "0.2.0"
+version = "0.2.1"
 description = "Personal Assistant MCP Server with SQLite/TinyDB support for status tracking, project management, todos, calendar functionality, and document storage"
 readme = "README.md"
 license = {file = "LICENSE"}

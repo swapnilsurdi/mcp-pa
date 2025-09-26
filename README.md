@@ -118,7 +118,8 @@ export MCP_PA_DOCS_DIR=/path/to/documents
 {
   "mcpServers": {
     "personal-assistant": {
-      "command": "mcp-personal-assistant",
+      "command": "uvx",
+      "args": ["mcp-personal-assistant"],
       "env": {
         "MCP_PA_DB_TYPE": "sqlite"
       }
