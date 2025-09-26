@@ -117,6 +117,30 @@ export MCP_PA_DOCS_DIR=/path/to/documents
 
 3. **Restart Claude Desktop** for the configuration to take effect
 
+## Usage Examples
+
+Once configured, the MCP Personal Assistant integrates seamlessly with Claude Desktop. Here are some examples of how it works:
+
+### MCP Server Status
+![MCP Server Configuration](examples/mcp_server_status.png)
+
+The server appears in Claude Desktop's developer settings, showing it's running and properly configured.
+
+### Creating Projects
+![Creating a Project](examples/creating_project.png)
+
+You can ask Claude to create projects, and it will use the MCP Personal Assistant tools to manage your project data.
+
+### Managing Project Data
+![Managing Projects](examples/managing_projects.png)
+
+The assistant can update project status, add tasks, and maintain detailed project information with automatic data persistence.
+
+### Intelligent Assistance
+![Travel Recommendations](examples/travel_recommendations.png)
+
+Claude can access your status and project history to provide personalized recommendations and assistance based on your stored preferences and travel history.
+
 ### Verification
 
 After restarting Claude Desktop, you should see the MCP Personal Assistant tools available. You can verify the setup by:
