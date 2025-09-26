@@ -121,6 +121,11 @@ export MCP_PA_DOCS_DIR=/path/to/documents
 
 Once configured, the MCP Personal Assistant integrates seamlessly with Claude Desktop. Here are some examples of how it works:
 
+### Claude Desktop Settings
+![Claude Settings](examples/claude_settings.png)
+
+You can configure Claude with custom instructions to automatically use the MCP Personal Assistant tools for status updates and project management.
+
 ### MCP Server Status
 ![MCP Server Configuration](examples/mcp_server_status.png)
 
