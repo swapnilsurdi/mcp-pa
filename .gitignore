@@ -25,6 +25,7 @@ wheels/
 .venv
 env/
 venv/
+build-env/
 ENV/
 env.bak/
 venv.bak/

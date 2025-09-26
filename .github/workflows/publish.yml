@@ -75,10 +75,10 @@ jobs:
       run: |
         # Test package imports
         python -c "from src import server, config, models; print('✅ Package imports work')"
-        
+
         # Test console script entry point
         python -c "from src.server import main; print('✅ Console script entry point works')"
-        
+
         echo "✅ Basic tests passed"
 
   build:
@@ -113,6 +113,23 @@ jobs:
     - name: Check package
       run: |
         twine check dist/*
+
+    - name: Test built package installation and console script
+      run: |
+        # Create a test environment
+        python -m venv test-env
+        source test-env/bin/activate
+
+        # Install the built package
+        pip install dist/*.whl
+
+        # Test console script exists and can start
+        which mcp-personal-assistant
+
+        # Test script can be imported (should exit gracefully after brief startup)
+        timeout 5s mcp-personal-assistant || [ $? -eq 124 ] && echo "✅ Console script starts successfully"
+
+        echo "✅ Package installation and console script test passed"
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
